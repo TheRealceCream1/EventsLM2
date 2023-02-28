@@ -8,9 +8,14 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State var viewState: ViewState = .home
+    
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        
+            TabView{
+                
+            }.accentColor(Color.black)
+
     }
 }
 
