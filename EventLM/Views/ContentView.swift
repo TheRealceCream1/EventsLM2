@@ -11,12 +11,40 @@ struct ContentView: View {
     @State var viewState: ViewState = .home
     
     var body: some View {
-        
+        if viewState == .authentication{
+            //AuthenticationView(viewState: $viewState)
+        }else if viewState == .login{
+            // LoginView(viewState: $viewState)
+        }else if viewState == .signup{
+            // SignUpView(viewState: $viewState)
+        }else{
             TabView{
                 
-            }.accentColor(Color.black)
-
+                HomeView(viewState: $viewState)
+                    .tabItem{
+                        Image(systemName: "star")
+                        Text("Home")
+                    }
+                
+                
+                ResultsView(viewState: $viewState)
+                    .tabItem{
+                        Image(systemName: "number.circle")
+                        Text("Results")
+                    }
+                
+                
+                SettingsView(viewState: $viewState)
+                    .tabItem{
+                        Image(systemName: "gearshape.2.fill")
+                            .foregroundColor(.black)
+                        Text("Settings")
+                    }
+                
+            }.accentColor(Color.Maroon)
+        }
     }
+    
 }
 
 struct ContentView_Previews: PreviewProvider {

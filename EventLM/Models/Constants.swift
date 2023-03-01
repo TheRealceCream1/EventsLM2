@@ -15,6 +15,9 @@ struct Constants{
     
 }
 
+extension Color{
+    static let Maroon = Color("Maroon")
+}
 enum ViewState{
-    case home, detail, scores, settings, login
+    case authentication, login, signup, home, results, settings
 }

@@ -10,7 +10,7 @@ import Foundation
 class Team{
     var name : String
     var record : String
-    
+
     
     init(name : String = "", record : String = ""){
         self.name = name

@@ -12,8 +12,6 @@ class Result : ObservableObject{
     
     @Published var date : String
     @Published var score : String
-    @Published var team1 : Team
-    @Published var team2 : Team
     
     
     
