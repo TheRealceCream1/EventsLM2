@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-
+ 
 struct HomeView: View {
     @Binding var viewState : ViewState
     var body: some View {

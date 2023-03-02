@@ -27,6 +27,7 @@
 		43B5B50C29A9096B007EA1D8 /* EventLMTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43B5B50B29A9096B007EA1D8 /* EventLMTests.swift */; };
 		43B5B51629A9096B007EA1D8 /* EventLMUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43B5B51529A9096B007EA1D8 /* EventLMUITests.swift */; };
 		43B5B51829A9096B007EA1D8 /* EventLMUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43B5B51729A9096B007EA1D8 /* EventLMUITestsLaunchTests.swift */; };
+		43FE738229B0F12500581ADF /* InputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43FE738129B0F12500581ADF /* InputView.swift */; };
 		8A50FEFD04C291A6DF85F154 /* Pods_EventLM.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F669F33CB501E076495BA897 /* Pods_EventLM.framework */; };
 /* End PBXBuildFile section */
 
@@ -72,6 +73,7 @@
 		43B5B51129A9096B007EA1D8 /* EventLMUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EventLMUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		43B5B51529A9096B007EA1D8 /* EventLMUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventLMUITests.swift; sourceTree = "<group>"; };
 		43B5B51729A9096B007EA1D8 /* EventLMUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventLMUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		43FE738129B0F12500581ADF /* InputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputView.swift; sourceTree = "<group>"; };
 		F363C8758D9E9DBBD40F89B8 /* Pods-EventLM.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EventLM.release.xcconfig"; path = "Target Support Files/Pods-EventLM/Pods-EventLM.release.xcconfig"; sourceTree = "<group>"; };
 		F669F33CB501E076495BA897 /* Pods_EventLM.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EventLM.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -116,6 +118,7 @@
 			children = (
 				43B5B4FC29A90969007EA1D8 /* ContentView.swift */,
 				4336C23829AE35D8005AD824 /* HomeView.swift */,
+				43FE738129B0F12500581ADF /* InputView.swift */,
 				4336C23A29AE35E6005AD824 /* EventView.swift */,
 				4336C23C29AE35F3005AD824 /* ResultsView.swift */,
 				4336C23E29AE35FC005AD824 /* SettingsView.swift */,
@@ -401,6 +404,7 @@
 				433D225629AF968200A32DF8 /* SignUpView.swift in Sources */,
 				433D225229AF966E00A32DF8 /* AuthenticationView.swift in Sources */,
 				4336C23729AE34C2005AD824 /* Constants.swift in Sources */,
+				43FE738229B0F12500581ADF /* InputView.swift in Sources */,
 				433D225829AF975800A32DF8 /* UserInfo.swift in Sources */,
 				4336C23B29AE35E6005AD824 /* EventView.swift in Sources */,
 			);

@@ -11,5 +11,5 @@ target 'EventLM' do
 	pod 'Firebase/Storage'
 	pod 'Firebase/Database'
 	pod 'Kingfisher/Core'
-
+	pod 'Firebase/Messaging'
 end

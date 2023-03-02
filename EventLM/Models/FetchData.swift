@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UserNotifications
 
 class FetchData: ObservableObject{
     
@@ -24,8 +25,7 @@ class FetchData: ObservableObject{
             print(error)
             
         }
-        
-        
+
     }
     
 }
@@ -33,29 +33,29 @@ class FetchData: ObservableObject{
 //MAKE VARIABLES LOWERCASE IN FIREBASE OR NO WORK!!!!!!
 
 struct Response: Codable{
-    var results: [Results]
-    var schedule: [Schedule]
+    var results: [Results] = []
+    var schedule: [Schedule] = []
 }
 
 //RESULTS PATH
 struct Results: Codable{
-    var teams: [Team]
+    var teams: [Team] = []
 }
 
 
 struct Team: Codable{
-    var baseball : Baseball
+    var baseball : Baseball = Baseball()
 }
 
 struct Baseball: Codable{
-    var game : Game
+    var game : Game = Game()
 }
 
 struct Game : Codable{
     //CHANGE NAME OF +Info variable to remove + symbol
-    var eInfo : String
-    var date : String
-    var location : String
+    var eInfo : String = ""
+    var date : String = "3/12/23"
+    var location : String = "Penn Wynne Park"
     
     //true = team1 won, false = team2 won
     
@@ -65,11 +65,11 @@ struct Game : Codable{
 
 struct Score: Codable{
     //CHANGE TEAMS TO INTS
-    var team1 : Int
-    var team2 : Int
+    var team1 : Int = 5
+    var team2 : Int = 3
 }
 
 //SCHEDULE PATH
 struct Schedule: Codable{
-    var baseball : Baseball
+    var baseball : Baseball = Baseball()
 }
