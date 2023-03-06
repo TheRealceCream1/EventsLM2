@@ -35,23 +35,23 @@ class FetchData: ObservableObject{
 struct Response: Codable{
     var results: [Results] = []
     var schedule: [Schedule] = []
+    var userInfo: [LMUserInfo] = []
 }
 
 //RESULTS PATH
 struct Results: Codable{
-    var teams: [Team] = []
+    var teams: [rTeam] = []
 }
-
-
-struct Team: Codable{
-    var baseball : Baseball = Baseball()
+//ALL SPORTS TEAMS
+struct rTeam: Codable{
+    var baseball : rBaseball = rBaseball()
 }
-
-struct Baseball: Codable{
-    var game : Game = Game()
+//ALL GAMES FOR THAT TEAM
+struct rBaseball: Codable{
+    var game : [rGame] = [rGame()]
 }
-
-struct Game : Codable{
+//INFORMATION ABOUT GAME
+struct rGame : Codable{
     //CHANGE NAME OF +Info variable to remove + symbol
     var eInfo : String = ""
     var date : String = "3/12/23"
@@ -60,9 +60,8 @@ struct Game : Codable{
     //true = team1 won, false = team2 won
     
     //var winner : Bool
-    
 }
-
+//SCORE OF GAME
 struct Score: Codable{
     //CHANGE TEAMS TO INTS
     var team1 : Int = 5
@@ -71,5 +70,28 @@ struct Score: Codable{
 
 //SCHEDULE PATH
 struct Schedule: Codable{
-    var baseball : Baseball = Baseball()
+    var team : [sTeam] = [sTeam()]
+}
+//DIFFERENT SPORTS TEAMS
+struct sTeam: Codable{
+    var baseball : sBaseball = sBaseball()
+}
+//ALL GAMES FOR THAT TEAM
+struct sBaseball: Codable{
+    var game : [sGames] = [sGames()]
+}
+//INFOMRATION ABOUT GAME
+struct sGames: Codable{
+    var eInfo : String = ""
+    var date : String = "3/12/23"
+    var location : String = "Penn Wynne Park"
+    
+}
+
+//USERINFO PATH
+struct LMUserInfo: Codable{
+    var userID : String = ""
+    var favorites : [Bool] = []
+    //var notifications:
+    var admin : Bool = false
 }
