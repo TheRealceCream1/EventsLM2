@@ -7,25 +7,26 @@
 
 import Foundation
 
-class Event : ObservableObject{
-    @Published var id : UUID = UUID()
+class Event : ObservableObject, Encodable{
+    var id : String = ""
     
-    @Published var date : String
-    @Published var time : String
-    @Published var location : String
-    @Published var price: String
-    @Published var name: String
+    var date : String
+    var time : String
+    var location : String
+    var price: String
+    var name: String
     
-    // Computed property of type dictionary that references our key pairs from our realtime database
-    var dictionary: [String: Any]{
-        ["date" : date,
-         "name" : name,
-         "location" : location,
-         "price" : price,
-         "time" : time
-        ]
-    }
-    
+//    // Computed property of type dictionary that references our key pairs from our realtime database
+//    var dictionary: [String: Any]{
+//        ["date" : date,
+//         "name" : name,
+//         "location" : location,
+//         "price" : price,
+//         "time" : time
+//        ]
+//    }
+//
+//
     
     init(date : String = "", time : String = "", location : String = "", price : String = "", name : String = ""){
         self.date = date
@@ -34,8 +35,13 @@ class Event : ObservableObject{
         self.price = price
         self.name = name
     }
-    
-    
-    
-    
+}
+extension Encodable{
+    var toDictionary: [String: Any]?{
+        guard let data = try? JSONEncoder().encode(self) else{
+            return nil
+        }
+        
+        return try? JSONSerialization.jsonObject(with: data, options: .allowFragments) as? [String: Any]
+    }
 }
