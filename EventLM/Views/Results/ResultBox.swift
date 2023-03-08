@@ -20,7 +20,7 @@ struct ResultBox: View {
                 Text("March 8, 2023")
                     .foregroundColor(.gray)
                     .font(Constants.SmallFont)
-                    .frame(width: (UIScreen.main.bounds.width/2)-70, alignment: .leading)
+                    .frame(width: (UIScreen.main.bounds.width/2)-UIScreen.main.bounds.width/15, alignment: .leading)
                 Text("Basketball")
                     .foregroundColor(.Maroon)
                     .font(Constants.SmallFont)
