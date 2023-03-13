@@ -12,11 +12,6 @@ struct AuthenticationView: View {
     
     var body: some View {
         ZStack{
-            Rectangle()
-                .foregroundColor(.brown)
-                .opacity(0.15)
-                .ignoresSafeArea(.all)
-                .frame(width: 500, height: 550)
             
             VStack{
                 Image("LMLogo")
@@ -34,7 +29,7 @@ struct AuthenticationView: View {
                         Rectangle()
                             .cornerRadius(30)
                             .frame(width:150,height:50)
-                            .foregroundColor(.brown)
+                            .foregroundColor(.Maroon)
                             .ignoresSafeArea()
                             .opacity(0.3)
                         Text("Sign Up")
@@ -51,7 +46,7 @@ struct AuthenticationView: View {
                         Rectangle()
                             .cornerRadius(30)
                             .frame(width:150,height:50)
-                            .foregroundColor(.brown)
+                            .foregroundColor(.Maroon)
                             .ignoresSafeArea()
                             .opacity(0.3)
                         Text("Login")

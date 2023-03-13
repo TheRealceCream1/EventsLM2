@@ -14,6 +14,7 @@ class Event : ObservableObject, Encodable{
     var time : String
     var location : String
     var price: String
+//    var spiritWearDescription: String
     var name: String
     
 //    // Computed property of type dictionary that references our key pairs from our realtime database
@@ -27,13 +28,14 @@ class Event : ObservableObject, Encodable{
 //    }
 //
 //
-    
-    init(date : String = "", time : String = "", location : String = "", price : String = "", name : String = ""){
+    // Commenting out for the moment not sure If i will need to initialize this
+    init(date : String = "", time : String = "", location : String = "", price : String = "", name : String = "", spiritWearDescription : String = ""){
         self.date = date
         self.time = time
         self.location = location
         self.price = price
         self.name = name
+//        self.spiritWearDescription = spiritWearDescription
     }
 }
 extension Encodable{

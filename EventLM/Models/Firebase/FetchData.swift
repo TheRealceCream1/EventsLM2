@@ -6,28 +6,32 @@
 //
 
 import Foundation
+import FirebaseDatabase
 import UserNotifications
 
 class FetchData: ObservableObject{
     
-    @Published var response: Response = Response()
-    
-    func getData() async{
-        let URLString = "https://eventlm-default-rtdb.firebaseio.com/"
-        guard let url = URL(string: URLString) else {return}
-        
-        do{
-            let (data, _) = try await URLSession.shared.data(from: url)
-            
-            let r = try JSONDecoder().decode(Response.self, from: data)
-            self.response = r
-        }catch{
-            print(error)
-            
-        }
-
-    }
-    
+//    @Published var response: Response = Response()
+//
+//    func getData() async{
+//        let URLString = "https://eventlm-default-rtdb.firebaseio.com/"
+//        guard let url = URL(string: URLString) else {return}
+//
+//        do{
+//            let (data, _) = try await URLSession.shared.data(from: url)
+//
+//            let r = try JSONDecoder().decode(Response.self, from: data)
+//            self.response = r
+//        }catch{
+//            print(error)
+//
+//        }
+//
+//    }
+//    func getData() {
+//         let ref = Database.database().reference()
+//        return ref.child("schedule/\(id)")
+//    }
 }
 
 //MAKE VARIABLES LOWERCASE IN FIREBASE OR NO WORK!!!!!!

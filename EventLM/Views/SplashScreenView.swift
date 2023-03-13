@@ -29,7 +29,7 @@ struct SplashScreenView: View {
         } else {
             VStack {
                         VStack {
-                            Image("LMLogo")
+                            Image("AppLogo")
 //                                .frame(width: 100, height: 100)
             //                    .font(.system(size: 80))
 //                            Text("Event LM")
@@ -40,7 +40,7 @@ struct SplashScreenView: View {
                         .opacity(opacity)
                         .onAppear {
                             withAnimation(.easeIn(duration:2)) {
-                                self.size = 0.7
+                                self.size = 0.15
                                 self.opacity = 1.0
                             }
                         }

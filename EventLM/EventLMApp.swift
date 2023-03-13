@@ -23,8 +23,7 @@ struct EventLM: App {
 
     var body: some Scene {
         WindowGroup {
-           
-            SplashScreenView()
+      SplashScreenView()
 
         }
     }

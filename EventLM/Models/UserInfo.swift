@@ -9,6 +9,7 @@ import Foundation
 import FirebaseAuth
 
 class UserInfo: ObservableObject{
+    @Published var id : String = UUID().uuidString
     @Published var username : String
     @Published var password : String
     @Published var loggedIn : Bool = false
