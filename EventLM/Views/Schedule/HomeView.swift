@@ -10,6 +10,7 @@ import SwiftUI
 struct HomeView: View {
     
     @Binding var viewState : ViewState
+    @EnvironmentObject var path : Path
     
     var body: some View {
         
@@ -25,7 +26,7 @@ struct HomeView: View {
                             .padding(.vertical, 5)
                         
                         VStack(alignment: .leading, spacing: 5){
-                            Text("LM vs some bad team that is ")
+                            Text("")
                                 .fontWeight(.semibold)
                                 .lineLimit(2)
                                 .minimumScaleFactor(0.75)
@@ -46,5 +47,8 @@ struct HomeView: View {
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
         HomeView(viewState: Binding.constant(ViewState.authentication))
+            .environmentObject(Path())
+            .environmentObject(getData())
+
     }
 }

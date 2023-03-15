@@ -22,7 +22,8 @@ struct SplashScreenView: View {
     @State private var isActive = false
     @State private var size = 0.5
     @State private var opacity = 0.5
-
+    @EnvironmentObject var path : Path
+    @EnvironmentObject var isData : getData
     var body: some View {
         if isActive {
             ContentView()
@@ -64,6 +65,9 @@ struct SplashScreenView_Previews: PreviewProvider {
     static var previews: some View {
 
         SplashScreenView()
+            .environmentObject(Path())
+            .environmentObject(getData())
+
 
     }
 

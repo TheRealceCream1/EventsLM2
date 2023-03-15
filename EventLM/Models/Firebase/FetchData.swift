@@ -11,6 +11,8 @@ import UserNotifications
 
 class FetchData: ObservableObject{
     
+    let ref = Database.database().reference()
+    
 //    @Published var response: Response = Response()
 //
 //    func getData() async{
@@ -28,10 +30,16 @@ class FetchData: ObservableObject{
 //        }
 //
 //    }
-//    func getData() {
-//         let ref = Database.database().reference()
-//        return ref.child("schedule/\(id)")
-//    }
+//    func getData(){
+//        ref.child("schedule").child.("Swimming").observeSingleEvent(of: .value, with: { snapshot in
+//            // Get user value
+//            let value = snapshot.value as? NSDictionary
+//
+//            // ...
+//          }) { error in
+//            print(error.localizedDescription)
+//          }
+
 }
 
 //MAKE VARIABLES LOWERCASE IN FIREBASE OR NO WORK!!!!!!

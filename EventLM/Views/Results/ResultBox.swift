@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct ResultBox: View {
+    @EnvironmentObject var path : Path
+    @EnvironmentObject var isData : getData
+
     var body: some View {
 
         ZStack {
@@ -65,6 +68,9 @@ struct ResultBox_Previews: PreviewProvider {
 
     static var previews: some View {
         ResultBox()
+            .environmentObject(Path())
+            .environmentObject(getData())
+
     }
 
 }

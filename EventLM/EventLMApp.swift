@@ -20,10 +20,14 @@ class AppDelegate: NSObject, UIApplicationDelegate {
 @main
 struct EventLM: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
+    @StateObject var path : Path = Path()
+    @StateObject var isData : getData = getData()
 
     var body: some Scene {
         WindowGroup {
       SplashScreenView()
+                .environmentObject(path)
+                .environmentObject(isData)
 
         }
     }

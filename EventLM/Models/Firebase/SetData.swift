@@ -32,8 +32,8 @@ class setData: ObservableObject{
     // Kind of usless right now in my opinion
     func setTeams(dictionary : [String: Any]){
         self.ref.child("results").setValue(self.dictionary)
-        
     }
+
     // Actually important function that we call upon in order to set the information in firebase
     func setObject(id : String, date : String, time : String, location : String , price : String){
         var generateObject = Event()

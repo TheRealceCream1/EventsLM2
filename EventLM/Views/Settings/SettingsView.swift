@@ -17,5 +17,6 @@ struct SettingsView: View {
 struct SettingsView_Previews: PreviewProvider {
     static var previews: some View {
         SettingsView(viewState: Binding.constant(ViewState.authentication))
+        
     }
 }

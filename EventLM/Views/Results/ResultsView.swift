@@ -11,8 +11,10 @@ import FirebaseCore
 import FirebaseAuth
 
 struct ResultsView: View {
-    
+    @EnvironmentObject var path : Path
     @Binding var viewState : ViewState
+    @EnvironmentObject var isData : getData
+
     var body: some View {
         ScrollView {
             Color.white
@@ -35,5 +37,8 @@ struct ResultsView: View {
 struct ResultsView_Previews: PreviewProvider {
     static var previews: some View {
         ResultsView(viewState: Binding.constant(ViewState.authentication))
+            .environmentObject(Path())
+            .environmentObject(getData())
+
     }
 }

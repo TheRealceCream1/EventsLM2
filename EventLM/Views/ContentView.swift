@@ -11,7 +11,9 @@ import SwiftUI
 
 struct ContentView: View {
     @State var viewState: ViewState = .home
-    
+    @EnvironmentObject var path : Path
+    @EnvironmentObject var isData : getData
+
     var body: some View {
         if viewState == .authentication{
             //AuthenticationView(viewState: $viewState)
@@ -52,5 +54,8 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+            .environmentObject(Path())
+            .environmentObject(getData())
+
     }
 }
