@@ -8,7 +8,7 @@
 import Foundation
 
 class Path : ObservableObject {
-    var path : [String] = ["schedule", "Basketball"]
+    var path : [String] = ["schedule"]
     
     func addPath (aPath : String )  {
         path.append(aPath)
@@ -16,6 +16,9 @@ class Path : ObservableObject {
     
     func remPath () {
         path.popLast()
+    }
+    func remAllPath () {
+        path.removeAll()
     }
     
     func fPath() -> String{

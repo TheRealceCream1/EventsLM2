@@ -122,8 +122,8 @@
 		4336C23429AE341E005AD824 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				43B5B4FC29A90969007EA1D8 /* ContentView.swift */,
 				438DCA7029B257EC0071E850 /* SplashScreenView.swift */,
+				43B5B4FC29A90969007EA1D8 /* ContentView.swift */,
 				438272CE29B8ED5B005CF3C5 /* PushData.swift */,
 				43AFDB8229B8DD9D0060D967 /* Schedule */,
 				43AFDB8129B8DD900060D967 /* Results */,

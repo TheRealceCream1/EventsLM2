@@ -13,6 +13,7 @@ class getData: ObservableObject{
     
     private let ref = Database.database().reference()
     
+    //GETS DATA FROM DATABASE
     func readData(path : String , completion: @escaping (Result<DataSnapshot, Error>) -> Void){
         ref.child(path).observe(.value) { snapshot in
             completion(.success(snapshot))

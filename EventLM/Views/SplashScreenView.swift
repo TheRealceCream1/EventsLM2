@@ -1,74 +1,47 @@
 //
-
-//  SplashScreenView.swift
-
-//  SplashScreen
-
+//  ContentView.swift
+//  EventLM
 //
-
-//  Created by Bennett Schweickert (student LM) on 3/1/23.
-
+//  Created by Owen Bress (student LM) on 2/24/23.
 //
-
-
 
 import SwiftUI
-
-
-
 struct SplashScreenView: View {
-
-
+    
     @State private var isActive = false
     @State private var size = 0.5
     @State private var opacity = 0.5
-    @EnvironmentObject var path : Path
-    @EnvironmentObject var isData : getData
+    
     var body: some View {
         if isActive {
             ContentView()
         } else {
             VStack {
-                        VStack {
-                            Image("AppLogo")
-//                                .frame(width: 100, height: 100)
-            //                    .font(.system(size: 80))
-//                            Text("Event LM")
-//                                .font(.title)
-//                                .frame(width: 80, height: 50)
-                        }
-                        .scaleEffect(size)
-                        .opacity(opacity)
-                        .onAppear {
-                            withAnimation(.easeIn(duration:2)) {
-                                self.size = 0.15
-                                self.opacity = 1.0
-                            }
-                        }
+                VStack {
+                    Image("AppLogo")
+                }
+                .scaleEffect(size)
+                .opacity(opacity)
+                .onAppear {
+                    withAnimation(.easeIn(duration:2)) {
+                        self.size = 0.15
+                        self.opacity = 1.0
                     }
-                    .onAppear {
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 3.5) {
-                            self.isActive = true
-                        }
-                    }
-
+                }
+            }
+            .onAppear {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 3.5) {
+                    self.isActive = true
+                }
+            }
         }
-
     }
-
 }
 
-
-
 struct SplashScreenView_Previews: PreviewProvider {
-
     static var previews: some View {
-
+        
         SplashScreenView()
-            .environmentObject(Path())
-            .environmentObject(getData())
-
-
     }
-
+    
 }

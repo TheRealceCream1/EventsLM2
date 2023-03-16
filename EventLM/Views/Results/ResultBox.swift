@@ -8,8 +8,10 @@
 import SwiftUI
 
 struct ResultBox: View {
-    @EnvironmentObject var path : Path
-    @EnvironmentObject var isData : getData
+    @State var eventData: [String: AnyObject]
+    var formattedEventData: String {
+            eventData.map { "\($0.key): \($0.value)" }.joined(separator: "\n")
+    }
 
     var body: some View {
 
@@ -67,9 +69,7 @@ struct ResultBox: View {
 struct ResultBox_Previews: PreviewProvider {
 
     static var previews: some View {
-        ResultBox()
-            .environmentObject(Path())
-            .environmentObject(getData())
+        ResultBox(eventData : [:])
 
     }
 

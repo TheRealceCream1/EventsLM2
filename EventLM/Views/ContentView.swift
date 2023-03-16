@@ -16,11 +16,11 @@ struct ContentView: View {
 
     var body: some View {
         if viewState == .authentication{
-            //AuthenticationView(viewState: $viewState)
+            AuthenticationView(viewState: $viewState)
         }else if viewState == .login{
-            // LoginView(viewState: $viewState)
+            LoginView(viewState: $viewState)
         }else if viewState == .signup{
-            // SignUpView(viewState: $viewState)
+            SignUpView(viewState: $viewState)
         }else{
             TabView{
                 
@@ -46,6 +46,7 @@ struct ContentView: View {
                     }
                 
             }.accentColor(Color.Maroon)
+                
         }
     }
     
