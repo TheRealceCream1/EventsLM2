@@ -12,15 +12,18 @@ struct AuthenticationView: View {
     
     var body: some View {
         ZStack{
-            
-            VStack{
+            Rectangle()
+                .frame(width: 500, height: 400)
+                .ignoresSafeArea()
+                .foregroundColor(.Maroon.opacity(0.2))
+            VStack(spacing : 40){
                 Image("LMLogo")
                     .resizable()
                     .frame(width: 100, height: 100)
                     .padding(3.0)
-                    .offset(y: -70)
                     .padding()
                     .padding()
+                Text("Aces Athletics")
                 
                 Button{
                     viewState = .signup
@@ -28,12 +31,13 @@ struct AuthenticationView: View {
                     ZStack{
                         Rectangle()
                             .cornerRadius(30)
-                            .frame(width:150,height:50)
+                            .frame(width:150,height:40)
                             .foregroundColor(.Maroon)
                             .ignoresSafeArea()
+                            .shadow(color: .black, radius: 20)
                             .opacity(0.3)
                         Text("Sign Up")
-                            .font(Constants.buttonFont)
+                            .font(Constants.SportFont)
                             .foregroundColor(Color.black)
                     }
                 }
@@ -45,12 +49,13 @@ struct AuthenticationView: View {
                     ZStack{
                         Rectangle()
                             .cornerRadius(30)
-                            .frame(width:150,height:50)
+                            .frame(width:150,height:40)
                             .foregroundColor(.Maroon)
                             .ignoresSafeArea()
                             .opacity(0.3)
+                            .shadow(color: .black, radius: 20)
                         Text("Login")
-                            .font(Constants.buttonFont)
+                            .font(Constants.SportFont)
                             .foregroundColor(Color.black)
                     }
                 }

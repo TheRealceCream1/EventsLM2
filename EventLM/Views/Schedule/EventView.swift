@@ -12,6 +12,8 @@ struct EventView: View {
     @State var address = "121,Penarth,Rd,,Bala,Cynwyd,,PA,19004"
     @State var eventData: [String: AnyObject]
     @State var date : String = ""
+    @State var time: String = ""
+    @State var name: String = ""
     
     var formattedEventData: String {
         eventData.map { "\($0.key): \($0.value)" }.joined(separator: "\n")
@@ -21,8 +23,8 @@ struct EventView: View {
         
         ZStack{
             ScrollView{
-                
                 Text(date)
+                Text(time)
             }
             .task{
                
@@ -30,6 +32,16 @@ struct EventView: View {
                     if let date = baseballData["date"] {
                         self.date = date as! String
                     }
+                    if let time = baseballData["time"] {
+                        self.time = time as! String
+                    }
+                    
+                    if let name = baseballData["name"] {
+                        self.name = name as! String
+                    }
+
+
+
                 }
             }
         }

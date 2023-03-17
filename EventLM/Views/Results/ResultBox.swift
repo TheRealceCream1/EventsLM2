@@ -48,7 +48,6 @@ struct ResultBox: View {
                     Text("Team")
                         .foregroundColor(.black.opacity(0.7))
                         .font(Constants.GameScoreFont)
-
                     Text("48")
                         .foregroundColor(.black.opacity(0.7))
                         .font(Constants.GameScoreFont)

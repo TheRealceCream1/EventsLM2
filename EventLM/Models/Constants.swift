@@ -14,6 +14,8 @@ struct Constants{
     static let textFont : Font = Font(UIFont(name: "HelveticaNeue-Thin", size: 20) ?? UIFont.systemFont(ofSize: 20))
     static let SmallFont : Font = Font(UIFont(name: "Bebas Neue", size: UIScreen.main.bounds.width/26) ?? UIFont.systemFont(ofSize: 13))
     static let GameScoreFont : Font = Font(UIFont(name: "Bebas Neue", size: UIScreen.main.bounds.width/12) ?? UIFont.systemFont(ofSize: 30))
+    static let SportFont : Font = Font(UIFont(name: "Bebas Neue", size: UIScreen.main.bounds.width/18) ?? UIFont.systemFont(ofSize: 30))
+    
     
 }
 
