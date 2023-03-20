@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct SportScrollView: View {
-    
+    @EnvironmentObject var path : Path
+
     var body: some View {
         
         ScrollView(.horizontal, showsIndicators: false) {
@@ -27,48 +28,60 @@ struct SportScrollView: View {
                         .font(Constants.SportFont)
                         .foregroundColor(.Maroon)
                         .onTapGesture {
-                            print("SOCCER")
+                            path.remPath()
+                            path.addPath(aPath: "results/soccer")
+                            print(path.fPath())
                         }
                     Text("Basketball")
                         .font(Constants.SportFont)
                         .foregroundColor(.Maroon)
                         .onTapGesture {
-                            print("BASKETBALL")
+                            path.remPath()
+                            path.addPath(aPath: "results/basketball")
+                            print(path.fPath())
                         }
                     Text("Football")
                         .font(Constants.SportFont)
                         .foregroundColor(.Maroon)
                         .onTapGesture {
-                            print("FOOTBALL")
+                            path.remPath()
+                            path.addPath(aPath: "results/football")
                         }
                     
                     Text("Lacrosse")
                         .font(Constants.SportFont)
                         .foregroundColor(.Maroon)
                         .onTapGesture {
-                            print("LACROSSE")
+                            path.remPath()
+                            path.addPath(aPath: "results/lacrosse")
                         }
                     Text("Swimming")
                         .font(Constants.SportFont)
                         .foregroundColor(.Maroon)
                         .onTapGesture {
-                            print("SWIMMING")
+                            path.remPath()
+                            path.addPath(aPath: "results/swimming")
                         }
                     Text("Volleyball")
                         .font(Constants.SportFont)
                         .foregroundColor(.Maroon)
                         .onTapGesture {
-                            print("VOLLEYBALL")
+                            path.remPath()
+                            path.addPath(aPath: "results/volleyball")
                         }
                     Text("Wrestling")
                         .font(Constants.SportFont)
-                        .foregroundColor(.Maroon).onTapGesture {
-                            print("WRESTLING")
+                        .foregroundColor(.Maroon)
+                        .onTapGesture {
+                            path.remPath()
+                            path.addPath(aPath: "results/wrestling")
                         }
                     Text("Field Hockey")
                         .font(Constants.SportFont)
-                        .foregroundColor(.Maroon).onTapGesture {
-                            print("FIELD HOCKEY")
+                        .foregroundColor(.Maroon)
+                        .onTapGesture {
+                            path.remPath()
+                            path.addPath(aPath: "results/field hockey")
                             
                         }
                     
@@ -99,6 +112,7 @@ struct SportScrollView_Previews: PreviewProvider {
     static var previews: some View {
         
         SportScrollView()
+            .environmentObject(Path())
         
     }
     

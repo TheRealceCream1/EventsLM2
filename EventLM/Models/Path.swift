@@ -8,17 +8,21 @@
 import Foundation
 
 class Path : ObservableObject {
-    var path : [String] = ["schedule"]
+    @Published var pathChanged = true
+    @Published var path : [String] = ["schedule"]
     
     func addPath (aPath : String )  {
         path.append(aPath)
+        pathChanged = !pathChanged
     }
     
     func remPath () {
         path.popLast()
+        pathChanged = !pathChanged
     }
     func remAllPath () {
         path.removeAll()
+        
     }
     
     func fPath() -> String{
