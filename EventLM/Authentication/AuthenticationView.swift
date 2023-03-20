@@ -17,7 +17,7 @@ struct AuthenticationView: View {
                 .ignoresSafeArea()
                 .foregroundColor(.Maroon.opacity(0.2))
             VStack(spacing : 40){
-                Image("LMLogo")
+                Image("AppLogo")
                     .resizable()
                     .frame(width: 100, height: 100)
                     .padding(3.0)

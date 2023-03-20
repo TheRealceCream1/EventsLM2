@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ResultBox: View {
-    @State var eventData: [String: AnyObject]
+    @State var eventData: [String : String]
     var formattedEventData: String {
             eventData.map { "\($0.key): \($0.value)" }.joined(separator: "\n")
     }
