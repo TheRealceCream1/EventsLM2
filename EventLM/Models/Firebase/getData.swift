@@ -101,9 +101,10 @@ class getData: ObservableObject{
                         
                     }
                 } else {
-                    print("Bad Path")
+                    completion(events)
                 }
             case .failure(let error):
+                completion(events)
                 print("Error: \(error.localizedDescription)")
             }
             

@@ -22,7 +22,7 @@ struct ResultBox: View {
                 .border(Color.black, width: 1)
 
             VStack(spacing: 5) {
-                Text(eventData["date"]!)
+                Text(eventData["date"] ?? "?")
                     .foregroundColor(.gray)
                     .font(Constants.SmallFont)
                     .frame(width: (UIScreen.main.bounds.width/2)-UIScreen.main.bounds.width/15, alignment: .leading)
@@ -36,7 +36,7 @@ struct ResultBox: View {
                     Text("Team")
                         .foregroundColor(.black)
                         .font(Constants.GameScoreFont)
-                    Text(eventData["scorelm"]!)
+                    Text(eventData["scorelm"] ?? "?")
                         .foregroundColor(.black)
                         .font(Constants.GameScoreFont)
                 }
@@ -48,7 +48,7 @@ struct ResultBox: View {
                     Text("Team")
                         .foregroundColor(.black.opacity(0.7))
                         .font(Constants.GameScoreFont)
-                    Text(eventData["scoreOpponent"]!)
+                    Text(eventData["scoreOpponent"] ?? "?")
                         .foregroundColor(.black.opacity(0.7))
                         .font(Constants.GameScoreFont)
                 }

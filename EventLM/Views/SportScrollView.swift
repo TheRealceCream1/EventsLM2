@@ -30,7 +30,7 @@ struct SportScrollView: View {
                         .onTapGesture {
                             path.remPath()
                             path.addPath(aPath: "results/soccer")
-                            print(path.fPath())
+                            path.lastSport = "soccer"
                         }
                     Text("Basketball")
                         .font(Constants.SportFont)
@@ -38,7 +38,7 @@ struct SportScrollView: View {
                         .onTapGesture {
                             path.remPath()
                             path.addPath(aPath: "results/basketball")
-                            print(path.fPath())
+                            path.lastSport = "basketball"
                         }
                     Text("Football")
                         .font(Constants.SportFont)
@@ -46,6 +46,7 @@ struct SportScrollView: View {
                         .onTapGesture {
                             path.remPath()
                             path.addPath(aPath: "results/football")
+                            path.lastSport = "football"
                         }
                     
                     Text("Lacrosse")
@@ -54,6 +55,7 @@ struct SportScrollView: View {
                         .onTapGesture {
                             path.remPath()
                             path.addPath(aPath: "results/lacrosse")
+                            path.lastSport = "lacrosse"
                         }
                     Text("Swimming")
                         .font(Constants.SportFont)
@@ -61,6 +63,7 @@ struct SportScrollView: View {
                         .onTapGesture {
                             path.remPath()
                             path.addPath(aPath: "results/swimming")
+                            path.lastSport = "swimming"
                         }
                     Text("Volleyball")
                         .font(Constants.SportFont)
@@ -68,6 +71,7 @@ struct SportScrollView: View {
                         .onTapGesture {
                             path.remPath()
                             path.addPath(aPath: "results/volleyball")
+                            path.lastSport = "volleyball"
                         }
                     Text("Wrestling")
                         .font(Constants.SportFont)
@@ -75,6 +79,7 @@ struct SportScrollView: View {
                         .onTapGesture {
                             path.remPath()
                             path.addPath(aPath: "results/wrestling")
+                            path.lastSport = "wrestling"
                         }
                     Text("Field Hockey")
                         .font(Constants.SportFont)
@@ -82,6 +87,7 @@ struct SportScrollView: View {
                         .onTapGesture {
                             path.remPath()
                             path.addPath(aPath: "results/field hockey")
+                            path.lastSport = ""
                             
                         }
                     

@@ -46,6 +46,8 @@ struct ContentView: View {
                     }
                 
             }.accentColor(Color.Maroon)
+                .foregroundColor(.gray)
+                
                 
         }
     }

@@ -10,6 +10,7 @@ import Foundation
 class Path : ObservableObject {
     @Published var pathChanged = true
     @Published var path : [String] = ["schedule"]
+    var lastSport : String = "soccer"
     
     func addPath (aPath : String )  {
         path.append(aPath)

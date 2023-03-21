@@ -29,13 +29,13 @@ struct HomeView: View {
                                         .padding(.vertical, 5)
                                     
                                     VStack(alignment: .leading, spacing: 5){
-                                        Text(event["name"]!)
+                                        Text(event["name"] ?? "?")
                                             .fontWeight(.semibold)
                                             .lineLimit(2)
                                             .minimumScaleFactor(0.75)
                                         
                                         
-                                        Text(event["date"]!)
+                                        Text(event["date"] ?? "?")
                                             .font(.subheadline)
                                             .foregroundColor(.secondary)
                                     }
