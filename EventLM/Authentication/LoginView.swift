@@ -11,7 +11,7 @@ import FirebaseAuth
 
 struct LoginView: View {
     @Binding var viewState : ViewState
-    @EnvironmentObject var userInfo : UserInfo
+    @EnvironmentObject var userInfo : User
     
     var body: some View {
         ZStack{
@@ -96,6 +96,6 @@ struct LoginView: View {
 struct LoginView_Previews: PreviewProvider {
     static var previews: some View {
         LoginView(viewState: Binding.constant(ViewState.login))
-            .environmentObject(UserInfo())
+            .environmentObject(User())
     }
 }

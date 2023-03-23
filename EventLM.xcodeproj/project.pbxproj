@@ -19,8 +19,9 @@
 		433D225229AF966E00A32DF8 /* AuthenticationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 433D225129AF966E00A32DF8 /* AuthenticationView.swift */; };
 		433D225429AF967800A32DF8 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 433D225329AF967800A32DF8 /* LoginView.swift */; };
 		433D225629AF968200A32DF8 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 433D225529AF968200A32DF8 /* SignUpView.swift */; };
-		433D225829AF975800A32DF8 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 433D225729AF975800A32DF8 /* UserInfo.swift */; };
 		438272CF29B8ED5B005CF3C5 /* PushData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438272CE29B8ED5B005CF3C5 /* PushData.swift */; };
+		4387BE8F29CC7189004EC86A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4387BE8E29CC7189004EC86A /* User.swift */; };
+		4387BE9129CC74CB004EC86A /* EvenBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4387BE9029CC74CB004EC86A /* EvenBox.swift */; };
 		438DCA7129B257EC0071E850 /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438DCA7029B257EC0071E850 /* SplashScreenView.swift */; };
 		4397C8FB29B77D9F001DC50F /* SetData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4397C8FA29B77D9F001DC50F /* SetData.swift */; };
 		43AFDB8029B8DD890060D967 /* ResultBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43AFDB7F29B8DD890060D967 /* ResultBox.swift */; };
@@ -67,8 +68,9 @@
 		433D225129AF966E00A32DF8 /* AuthenticationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationView.swift; sourceTree = "<group>"; };
 		433D225329AF967800A32DF8 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		433D225529AF968200A32DF8 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
-		433D225729AF975800A32DF8 /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
 		438272CE29B8ED5B005CF3C5 /* PushData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushData.swift; sourceTree = "<group>"; };
+		4387BE8E29CC7189004EC86A /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		4387BE9029CC74CB004EC86A /* EvenBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EvenBox.swift; sourceTree = "<group>"; };
 		438DCA7029B257EC0071E850 /* SplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenView.swift; sourceTree = "<group>"; };
 		4397C8FA29B77D9F001DC50F /* SetData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetData.swift; sourceTree = "<group>"; };
 		43AFDB7F29B8DD890060D967 /* ResultBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultBox.swift; sourceTree = "<group>"; };
@@ -140,10 +142,10 @@
 		4336C23529AE3427005AD824 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				4387BE8D29CC7171004EC86A /* UserData */,
 				43AFDB8429B8DDEF0060D967 /* Firebase */,
 				4336C23629AE34C1005AD824 /* Constants.swift */,
 				4336C24029AE3658005AD824 /* Event.swift */,
-				433D225729AF975800A32DF8 /* UserInfo.swift */,
 				4333AA1B29C20CF30060BB5B /* Path.swift */,
 			);
 			path = Models;
@@ -157,6 +159,14 @@
 				433D225529AF968200A32DF8 /* SignUpView.swift */,
 			);
 			path = Authentication;
+			sourceTree = "<group>";
+		};
+		4387BE8D29CC7171004EC86A /* UserData */ = {
+			isa = PBXGroup;
+			children = (
+				4387BE8E29CC7189004EC86A /* User.swift */,
+			);
+			path = UserData;
 			sourceTree = "<group>";
 		};
 		43AFDB8129B8DD900060D967 /* Results */ = {
@@ -173,6 +183,7 @@
 			children = (
 				4336C23829AE35D8005AD824 /* HomeView.swift */,
 				4336C23A29AE35E6005AD824 /* EventView.swift */,
+				4387BE9029CC74CB004EC86A /* EvenBox.swift */,
 			);
 			path = Schedule;
 			sourceTree = "<group>";
@@ -447,6 +458,7 @@
 				4336C23D29AE35F3005AD824 /* ResultsView.swift in Sources */,
 				4336C23929AE35D8005AD824 /* HomeView.swift in Sources */,
 				433D225429AF967800A32DF8 /* LoginView.swift in Sources */,
+				4387BE9129CC74CB004EC86A /* EvenBox.swift in Sources */,
 				438DCA7129B257EC0071E850 /* SplashScreenView.swift in Sources */,
 				438272CF29B8ED5B005CF3C5 /* PushData.swift in Sources */,
 				43B5B4FB29A90969007EA1D8 /* EventLMApp.swift in Sources */,
@@ -456,9 +468,9 @@
 				43DC2FFA29C5981700DC7325 /* ManageData.swift in Sources */,
 				4336C23729AE34C2005AD824 /* Constants.swift in Sources */,
 				43C2102B29C48AA0001D9C09 /* SportScrollView.swift in Sources */,
-				433D225829AF975800A32DF8 /* UserInfo.swift in Sources */,
 				4333AA1C29C20CF30060BB5B /* Path.swift in Sources */,
 				4336C23B29AE35E6005AD824 /* EventView.swift in Sources */,
+				4387BE8F29CC7189004EC86A /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

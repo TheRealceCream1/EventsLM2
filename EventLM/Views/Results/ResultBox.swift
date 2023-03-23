@@ -9,9 +9,7 @@ import SwiftUI
 
 struct ResultBox: View {
     @State var eventData: [String : String]
-    var formattedEventData: String {
-            eventData.map { "\($0.key): \($0.value)" }.joined(separator: "\n")
-    }
+    @EnvironmentObject var path : Path
 
     var body: some View {
 
@@ -26,7 +24,7 @@ struct ResultBox: View {
                     .foregroundColor(.gray)
                     .font(Constants.SmallFont)
                     .frame(width: (UIScreen.main.bounds.width/2)-UIScreen.main.bounds.width/15, alignment: .leading)
-                Text("Basketball")
+                Text(path.lastSport)
                     .foregroundColor(.Maroon)
                     .font(Constants.SmallFont)
                 HStack {
@@ -69,6 +67,7 @@ struct ResultBox_Previews: PreviewProvider {
 
     static var previews: some View {
         ResultBox(eventData : [:])
+            .environmentObject(Path())
 
     }
 

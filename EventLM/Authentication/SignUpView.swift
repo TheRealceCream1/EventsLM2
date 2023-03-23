@@ -11,7 +11,7 @@ import FirebaseCore
 import FirebaseAuth
 
 struct SignUpView: View {
-    @EnvironmentObject var userInfo : UserInfo
+    @EnvironmentObject var userInfo : User
     @Binding var viewState : ViewState
     
     var body: some View {
@@ -96,6 +96,6 @@ struct SignUpView: View {
 struct SignUpView_Previews: PreviewProvider {
     static var previews: some View {
         SignUpView(viewState: Binding.constant(ViewState.signup))
-            .environmentObject(UserInfo())
+            .environmentObject(User())
     }
 }
