@@ -24,12 +24,19 @@ struct HomeView: View {
                             Rectangle()
                                 .foregroundColor(.accentColor.opacity(0.2))
                                 .cornerRadius(30)
-                                .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height/5.5)
+                                .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height/4.75)
                                 .onTapGesture {
                                     print("clicked")
                                 }
-                            HStack {
+                            HStack(spacing: 20){
                                 VStack(spacing: 5){
+                                    
+                                    Text("Sport")
+                                        .font(Constants.MediumFont)
+                                        .foregroundColor(.accentColor)
+                                        .offset(y:UIScreen.main.bounds.height/65)
+                                    
+                                    
                                     HStack(){
                                         Image("LMLogo")
                                             .resizable()
@@ -40,7 +47,8 @@ struct HomeView: View {
                                         
                                         VStack(alignment: .leading, spacing: 5){
                                             Text(event["team1"] ?? "?")
-                                                .fontWeight(.semibold)
+                                                .font(Constants.GameScoreFont)
+                                                .foregroundColor(.black)
                                                 .lineLimit(2)
                                                 .minimumScaleFactor(0.75)
                                         }
@@ -55,7 +63,8 @@ struct HomeView: View {
                                         
                                         VStack(alignment: .leading, spacing: 5){
                                             Text(event["team2"] ?? "?")
-                                                .fontWeight(.semibold)
+                                                .font(Constants.GameScoreFont)
+                                                .foregroundColor(.black)
                                                 .lineLimit(2)
                                                 .minimumScaleFactor(0.75)
                                             
@@ -73,8 +82,16 @@ struct HomeView: View {
                                     Text(event["date"] ?? "?")
                                         .font(Constants.SmallFont)
                                         .foregroundColor(.secondary)
+                                    Text("Time: ")
+                                        .font(Constants.SmallFont)
+                                        .foregroundColor(.accentColor)
+                                    Text(event["time"] ?? "?")
+                                        .font(Constants.SmallFont)
+                                        .foregroundColor(.secondary)
                                     
                                 }
+                                Image(systemName: "calendar.badge.plus")
+                                    .font(.system(size: UIScreen.main.bounds.width/14))
                             }
                         }
                         

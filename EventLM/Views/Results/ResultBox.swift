@@ -16,7 +16,7 @@ struct ResultBox: View {
         ZStack {
             Rectangle()
                 .frame(width: ((UIScreen.main.bounds.width/2)-4), height: UIScreen.main.bounds.height/4)
-                .foregroundColor(.black.opacity(0.05))
+                .foregroundColor(.accentColor.opacity(0.2))
                 .border(Color.black, width: 1)
 
             VStack(spacing: 5) {
