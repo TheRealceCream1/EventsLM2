@@ -15,90 +15,89 @@ struct HomeView: View {
     
     var body: some View {
         ZStack{
-            ScrollView{
-                //                List{
-                ForEach(events, id: \.id) { e in
-                    if let event = e.value as? [String: String]{
-                        //                            NavigationLink(destination: EventView(eventData : event), label: {
-                        ZStack {
-                            Rectangle()
-                                .foregroundColor(.accentColor.opacity(0.2))
-                                .cornerRadius(30)
-                                .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height/4.75)
-                                .onTapGesture {
-                                    print("clicked")
-                                }
-                            HStack(spacing: 20){
-                                VStack(spacing: 5){
-                                    
-                                    Text("Sport")
-                                        .font(Constants.MediumFont)
-                                        .foregroundColor(.accentColor)
-                                        .offset(y:UIScreen.main.bounds.height/65)
-                                    
-                                    
-                                    HStack(){
-                                        Image("LMLogo")
-                                            .resizable()
-                                            .scaledToFit()
-                                            .frame(height: UIScreen.main.bounds.height/15)
-                                            .cornerRadius(4)
-                                            .padding(.vertical, 5)
-                                        
-                                        VStack(alignment: .leading, spacing: 5){
-                                            Text(event["team1"] ?? "?")
-                                                .font(Constants.GameScoreFont)
-                                                .foregroundColor(.black)
-                                                .lineLimit(2)
-                                                .minimumScaleFactor(0.75)
-                                        }
-                                    }
-                                    HStack(){
-                                        Image("badLogo")
-                                            .resizable()
-                                            .scaledToFit()
-                                            .frame(height: UIScreen.main.bounds.height/15)
-                                            .cornerRadius(4)
-                                            .padding(.vertical, 5)
-                                        
-                                        VStack(alignment: .leading, spacing: 5){
-                                            Text(event["team2"] ?? "?")
-                                                .font(Constants.GameScoreFont)
-                                                .foregroundColor(.black)
-                                                .lineLimit(2)
-                                                .minimumScaleFactor(0.75)
-                                            
-                                        }
-                                    }
-                                    
-                                }
+            ScrollView(){
+                VStack(spacing:3) {
+                    ForEach(events, id: \.id) { e in
+                        if let event = e.value as? [String: String]{
+                            ZStack {
                                 Rectangle()
-                                    .frame(width: 2, height: UIScreen.main.bounds.height/7)
-                                    .foregroundColor(.black.opacity(0.4))
-                                VStack {
-                                    Text("Date: ")
-                                        .font(Constants.SmallFont)
-                                        .foregroundColor(.accentColor)
-                                    Text(event["date"] ?? "?")
-                                        .font(Constants.SmallFont)
-                                        .foregroundColor(.secondary)
-                                    Text("Time: ")
-                                        .font(Constants.SmallFont)
-                                        .foregroundColor(.accentColor)
-                                    Text(event["time"] ?? "?")
-                                        .font(Constants.SmallFont)
-                                        .foregroundColor(.secondary)
-                                    
+                                    .foregroundColor(.black.opacity(0.1))
+                                    .cornerRadius(30)
+                                    .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height/4.75)
+                                    .onTapGesture {
+                                        EventView(event: event)
+                                    }
+                                HStack(spacing: 20){
+                                    VStack(spacing: 5){
+                                        
+                                        Text(path.lastSport)
+                                            .font(Constants.MediumFont)
+                                            .foregroundColor(.accentColor)
+                                            .offset(y:UIScreen.main.bounds.height/65)
+                                        
+                                        
+                                        HStack(){
+                                            Image("LMLogo")
+                                                .resizable()
+                                                .scaledToFit()
+                                                .frame(height: UIScreen.main.bounds.height/15)
+                                                .cornerRadius(4)
+                                                .padding(.vertical, 5)
+                                            
+                                            VStack(alignment: .leading, spacing: 5){
+                                                Text(event["team1"] ?? "?")
+                                                    .font(Constants.GameScoreFont)
+                                                    .foregroundColor(.black)
+                                                    .lineLimit(2)
+                                                    .minimumScaleFactor(0.75)
+                                            }
+                                        }
+                                        HStack(){
+                                            Image("badLogo")
+                                                .resizable()
+                                                .scaledToFit()
+                                                .frame(height: UIScreen.main.bounds.height/15)
+                                                .cornerRadius(4)
+                                                .padding(.vertical, 5)
+                                            
+                                            VStack(alignment: .leading, spacing: 5){
+                                                Text(event["team2"] ?? "?")
+                                                    .font(Constants.GameScoreFont)
+                                                    .foregroundColor(.black)
+                                                    .lineLimit(2)
+                                                    .minimumScaleFactor(0.75)
+                                                
+                                            }
+                                        }
+                                        
+                                    }
+                                    Rectangle()
+                                        .frame(width: 2, height: UIScreen.main.bounds.height/6)
+                                        .foregroundColor(.black.opacity(0.4))
+                                    VStack {
+                                        Text("Date: ")
+                                            .font(Constants.SmallFont)
+                                            .foregroundColor(.accentColor)
+                                        Text(event["date"] ?? "?")
+                                            .font(Constants.SmallFont)
+                                            .foregroundColor(.secondary)
+                                        Text("Time: ")
+                                            .font(Constants.SmallFont)
+                                            .foregroundColor(.accentColor)
+                                        Text(event["time"] ?? "?")
+                                            .font(Constants.SmallFont)
+                                            .foregroundColor(.secondary)
+                                        
+                                    }
+                                    Image(systemName: "plus.rectangle")
+                                        .font(.system(size: UIScreen.main.bounds.width/14))
+                                        .foregroundColor(.black)
                                 }
-                                Image(systemName: "calendar.badge.plus")
-                                    .font(.system(size: UIScreen.main.bounds.width/14))
                             }
                         }
-                        
                     }
                     
                 }
-                //                }
             }
         }
         .task {

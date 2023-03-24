@@ -10,17 +10,54 @@ import FirebaseDatabase
 
 struct EventView: View {
     @State var address = "121,Penarth,Rd,,Bala,Cynwyd,,PA,19004"
-    @State var eventData: [String : String]
-
+    @EnvironmentObject var path : Path
+    @State var event: [String : String] = [:]
     var body: some View {
         
         ZStack{
-            ScrollView{
-                // implementattion for text display 
+            VStack {
+                HStack(spacing: UIScreen.main.bounds.width/5) {
+                    VStack {
+                    Image("LMLogo")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(height: UIScreen.main.bounds.height/8)
+                        .cornerRadius(4)
+                        .padding(.vertical, 5)
+                    
+                        Text(event["team1"] ?? "?")
+                            .font(Constants.GameScoreFont)
+                            .foregroundColor(.black)
+                            .lineLimit(2)
+                            .minimumScaleFactor(0.75)
+                    }
+                    Image("badLogo")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(height: UIScreen.main.bounds.height/8)
+                        .cornerRadius(4)
+                        .padding(.vertical, 5)
+                }
+                Spacer()
+                
+                
             }
             
             
             
+            
+        }
+        .task {
+//            
+//            path.remAllPath()
+//            path.addPath(aPath: "schedule")
+//            
+//            //GATHERS ALL EVENTS UNDER EACH SPORTS IN SCHEDULE AND SORTS BY DATE
+//            getData.getSortedScheduled(path: path) { sortedEvents in
+//                DispatchQueue.main.async {
+//                    events = sortedEvents
+//                }
+//            }
             
         }
         
@@ -48,6 +85,7 @@ struct EventView: View {
 
 struct EventView_Previews: PreviewProvider {
     static var previews: some View {
-        EventView(eventData : [:])
+        EventView()
+            .environmentObject(Path())
     }
 }
