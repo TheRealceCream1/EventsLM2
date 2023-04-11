@@ -48,10 +48,10 @@ struct EventView: View {
             
         }
         .task {
-//            
+//
 //            path.remAllPath()
 //            path.addPath(aPath: "schedule")
-//            
+//
 //            //GATHERS ALL EVENTS UNDER EACH SPORTS IN SCHEDULE AND SORTS BY DATE
 //            getData.getSortedScheduled(path: path) { sortedEvents in
 //                DispatchQueue.main.async {
