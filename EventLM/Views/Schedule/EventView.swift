@@ -12,6 +12,7 @@ struct EventView: View {
     @State var address = "121,Penarth,Rd,,Bala,Cynwyd,,PA,19004"
     @EnvironmentObject var path : Path
     @State var event: [String : String] = [:]
+    @State var logos : [String] = ["Haverford", "Penncrest", "Ridley", "Strath Haven", "Garnet Valley", "Conestoga", "Radnor", "Harriton"]
     var body: some View {
         
         ZStack{
@@ -31,12 +32,22 @@ struct EventView: View {
                             .lineLimit(2)
                             .minimumScaleFactor(0.75)
                     }
-                    Image("badLogo")
-                        .resizable()
-                        .scaledToFit()
-                        .frame(height: UIScreen.main.bounds.height/8)
-                        .cornerRadius(4)
-                        .padding(.vertical, 5)
+                    if logos.contains(event["name"] ?? "?" ){
+                        Image(event["name"] ?? "badLogo")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(height: UIScreen.main.bounds.height/8)
+                            .cornerRadius(4)
+                            .padding(.vertical, 5)
+                    }
+                    else{
+                        Image("Unknown")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(height: UIScreen.main.bounds.height/8)
+                            .cornerRadius(4)
+                            .padding(.vertical, 5)
+                    }
                 }
                 Spacer()
                 

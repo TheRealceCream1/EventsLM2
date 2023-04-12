@@ -11,10 +11,16 @@ struct ResultsDetailView: View {
     @State var eventData: [String : String]
     var body: some View {
         VStack{
-            Text("Lower Merion vs\(eventData["name"] ?? "?")")
-                .font(.largeTitle)
-                .padding(.bottom)
-            Text(eventData["date"] ?? "_")
+            HStack {
+            Text("Lower Merion")
+                .font(Constants.LargeFont)
+                .foregroundColor(.black)
+            Text("\(eventData["name"] ?? "?")")
+                .font(Constants.LargeFont)
+                .foregroundColor(.black)
+                
+            }
+            Spacer()
             // Putting a crown over the winning teams logo
             
             if eventData["scorelm"] ?? "0" > eventData["scoreOpponent"] ?? "0" {
@@ -23,17 +29,16 @@ struct ResultsDetailView: View {
                         Image("Crown")
                             .resizable()
                             .frame(width: (UIScreen.main.bounds.width/4), height: (UIScreen.main.bounds.width/4))
-                        VStack{
                             Image("LMLogo")
                                 .resizable()
-                                .frame(width: (UIScreen.main.bounds.width/3), height: (UIScreen.main.bounds.width/3))
+                                .frame(width: (UIScreen.main.bounds.width/5), height: (UIScreen.main.bounds.width/5))
                             Text(eventData["scorelm"] ?? "?")
-                        }
+                        
                     }
                     VStack{
                         Image(eventData["name"] ?? "badLogo")
                             .resizable()
-                            .frame(width: (UIScreen.main.bounds.width/3), height: (UIScreen.main.bounds.width/3))
+                            .frame(width: (UIScreen.main.bounds.width/4), height: (UIScreen.main.bounds.width/4))
                         Text(eventData["scoreOpponent"] ?? "?")
                     }
                 }
@@ -43,7 +48,7 @@ struct ResultsDetailView: View {
                     VStack{
                         Image("LMLogo")
                             .resizable()
-                            .frame(width: (UIScreen.main.bounds.width/3), height: (UIScreen.main.bounds.width/3))
+                            .frame(width: (UIScreen.main.bounds.width/4), height: (UIScreen.main.bounds.width/4))
                         Text(eventData["scorelm"] ?? "?")
                     }
                     VStack{
@@ -63,28 +68,9 @@ struct ResultsDetailView: View {
             else{
                 Text("Draw")
             }
+            Text(eventData["date"] ?? "_")
             
             
-            
-            
-            //            if eventData["scorelm"] ?? "0" > eventData["scoreOpponent"] ?? "0" {
-            //                VStack{
-            //                    Image("Crown")
-            //                        .resizable()
-            //                    Image("LMLogo")
-            //                        .resizable()
-            //                }
-            //            }
-            //            else if eventData["scorelm"] ?? "0" < eventData["scoreOppomemt"] ?? "0" {
-            //                VStack{
-            //                    Image("Crown")
-            //                        .resizable()
-            //                    Image("LMLogo")
-            //                        .resizable()
-            //                }
-            //            }
-            //            else{
-            //                Text("draw")
         }
     }
 }

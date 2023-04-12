@@ -12,7 +12,7 @@ struct ResultBox: View {
     @EnvironmentObject var path : Path
     // List of all school logos stored locally within the app
     // We also have to be really careful as the syntax is very sensitive
-    @State var logos : [String] = ["Haverford", "Penncrest", "Ridley", "Strath Haven", "Garnet Valley", "Conestoga", "Radnor", ]
+    @State var logos : [String] = ["Haverford", "Penncrest", "Ridley", "Strath Haven", "Garnet Valley", "Conestoga", "Radnor", "Harriton"]
     var body: some View {
 
         ZStack {

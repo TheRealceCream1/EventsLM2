@@ -12,7 +12,8 @@ struct HomeView: View {
     @Binding var viewState : ViewState
     @EnvironmentObject var path : Path
     @State var events: [(id: UUID, key: String, value: AnyObject)] = []
-    
+    @State var logos : [String] = ["Haverford", "Penncrest", "Ridley", "Strath Haven", "Garnet Valley", "Conestoga", "Radnor", "Harriton"]
+
     var body: some View {
         ZStack{
             NavigationView{
@@ -25,13 +26,10 @@ struct HomeView: View {
                                         .foregroundColor(.black.opacity(0.1))
                                         .cornerRadius(30)
                                         .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height/4.75)
-                                        .onTapGesture {
-                                            EventView(event: event)
-                                        }
                                     HStack(spacing: 20){
                                         VStack(spacing: 5){
                                             
-                                            Text(path.lastSport)
+                                            Text(path.lastSport) // Problem here the text is not individual. 
                                                 .font(Constants.MediumFont)
                                                 .foregroundColor(.accentColor)
                                                 .offset(y:UIScreen.main.bounds.height/65)
@@ -41,7 +39,7 @@ struct HomeView: View {
                                                 Image("LMLogo")
                                                     .resizable()
                                                     .scaledToFit()
-                                                    .frame(height: UIScreen.main.bounds.height/15)
+                                                    .frame(height: UIScreen.main.bounds.height/13)
                                                     .cornerRadius(4)
                                                     .padding(.vertical, 5)
                                                 
@@ -54,12 +52,23 @@ struct HomeView: View {
                                                 }
                                             }
                                             HStack(){
-                                                Image("badLogo")
-                                                    .resizable()
-                                                    .scaledToFit()
-                                                    .frame(height: UIScreen.main.bounds.height/15)
-                                                    .cornerRadius(4)
-                                                    .padding(.vertical, 5)
+                                                if logos.contains(event["name"] ?? "?" ){
+                                                    Image(event["name"] ?? "badLogo")
+                                                        .resizable()
+                                                        .scaledToFit()
+                                                        .frame(height: UIScreen.main.bounds.height/15)
+                                                        .cornerRadius(4)
+                                                        .padding(.vertical, 5)
+                                                        .padding(.horizontal, 5)
+                                                }
+                                                else{
+                                                    Image("Unknown")
+                                                        .resizable()
+                                                        .scaledToFit()
+                                                        .frame(height: UIScreen.main.bounds.height/15)
+                                                        .cornerRadius(4)
+                                                        .padding(.vertical, 5)
+                                                }
                                                 
                                                 VStack(alignment: .leading, spacing: 5){
                                                     Text(event["team2"] ?? "?")
@@ -91,7 +100,7 @@ struct HomeView: View {
                                             
                                         }
                                         NavigationLink{
-                                            EventView()
+                                            EventView(event: event)
                                         }label: {
                                             Image(systemName: "plus.rectangle")
                                                 .font(.system(size: UIScreen.main.bounds.width/14))
